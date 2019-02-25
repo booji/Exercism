@@ -1,2 +1,5 @@
 **/__pycache__
-**/.exercismcpp/*/build
+**/.exercism
+cpp/*/build
+.exercism
+build
