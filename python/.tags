@@ -1,0 +1,48 @@
+YACHT	/Users/pip/Exercism/python/yacht/yacht.py	/^YACHT = lambda x: 50 if len(set(x)) == 1 else 0$/;"	variable	line:3
+ONES	/Users/pip/Exercism/python/yacht/yacht.py	/^ONES = lambda x: single_dice_num(x,1)$/;"	variable	line:4
+TWOS	/Users/pip/Exercism/python/yacht/yacht.py	/^TWOS = lambda x: single_dice_num(x,2)$/;"	variable	line:5
+THREES	/Users/pip/Exercism/python/yacht/yacht.py	/^THREES = lambda x: single_dice_num(x,3)$/;"	variable	line:6
+FOURS	/Users/pip/Exercism/python/yacht/yacht.py	/^FOURS = lambda x: single_dice_num(x,4)$/;"	variable	line:7
+FIVES	/Users/pip/Exercism/python/yacht/yacht.py	/^FIVES = lambda x: single_dice_num(x,5)$/;"	variable	line:8
+SIXES	/Users/pip/Exercism/python/yacht/yacht.py	/^SIXES = lambda x: single_dice_num(x,6)$/;"	variable	line:9
+FULL_HOUSE	/Users/pip/Exercism/python/yacht/yacht.py	/^FULL_HOUSE = lambda x: sum(x) if len(set(x)) == 2 and x.count(x[0]) in [2,3] else 0$/;"	variable	line:10
+FOUR_OF_A_KIND	/Users/pip/Exercism/python/yacht/yacht.py	/^FOUR_OF_A_KIND = lambda x: sum(4 * y for y in set(x) if x.count(y) >= 4)$/;"	variable	line:11
+LITTLE_STRAIGHT	/Users/pip/Exercism/python/yacht/yacht.py	/^LITTLE_STRAIGHT = lambda x: 30 * (sorted(x) == [1,2,3,4,5])$/;"	variable	line:12
+BIG_STRAIGHT	/Users/pip/Exercism/python/yacht/yacht.py	/^BIG_STRAIGHT = lambda x: 30 * (sorted(x) == [2,3,4,5,6])$/;"	variable	line:13
+CHOICE	/Users/pip/Exercism/python/yacht/yacht.py	/^CHOICE = lambda x: sum(x)$/;"	variable	line:14
+single_dice_num	/Users/pip/Exercism/python/yacht/yacht.py	/^def single_dice_num(x, num):$/;"	function	line:16
+score	/Users/pip/Exercism/python/yacht/yacht.py	/^def score(dice, category):$/;"	function	line:19
+SpaceAge	/Users/pip/Exercism/python/space-age/space_age.py	/^class SpaceAge(object):$/;"	class	line:1
+earth_year	/Users/pip/Exercism/python/space-age/space_age.py	/^    earth_year= 31557600 # in seconds$/;"	variable	line:2	class:SpaceAge
+__init__	/Users/pip/Exercism/python/space-age/space_age.py	/^    def __init__(self, seconds):$/;"	member	line:3	class:SpaceAge
+on_earth	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_earth(self):$/;"	member	line:6	class:SpaceAge
+on_mercury	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_mercury(self):$/;"	member	line:8	class:SpaceAge
+on_venus	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_venus(self):$/;"	member	line:10	class:SpaceAge
+on_mars	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_mars(self):$/;"	member	line:12	class:SpaceAge
+on_jupiter	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_jupiter(self):$/;"	member	line:14	class:SpaceAge
+on_saturn	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_saturn(self):$/;"	member	line:16	class:SpaceAge
+on_uranus	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_uranus(self):$/;"	member	line:18	class:SpaceAge
+on_neptune	/Users/pip/Exercism/python/space-age/space_age.py	/^    def on_neptune(self):$/;"	member	line:20	class:SpaceAge
+division	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^from __future__ import division$/;"	namespace	line:1
+gcd	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^from math import gcd$/;"	namespace	line:2
+Rational	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^class Rational(object):$/;"	class	line:4
+__init__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __init__(self, numerator, denominator):$/;"	member	line:5	class:Rational
+__eq__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __eq__(self, other):$/;"	member	line:13	class:Rational	file:
+__repr__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __repr__(self):$/;"	member	line:16	class:Rational	file:
+__add__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __add__(self, other):$/;"	member	line:19	class:Rational	file:
+__sub__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __sub__(self, other):$/;"	member	line:24	class:Rational	file:
+__mul__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __mul__(self, other):$/;"	member	line:29	class:Rational	file:
+__truediv__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __truediv__(self, other):$/;"	member	line:35	class:Rational	file:
+__abs__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __abs__(self):$/;"	member	line:40	class:Rational	file:
+__pow__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __pow__(self, power):$/;"	member	line:43	class:Rational	file:
+__rpow__	/Users/pip/Exercism/python/rational-numbers/rational_numbers.py	/^    def __rpow__(self, base):$/;"	member	line:53	class:Rational	file:
+np	/Users/pip/Exercism/python/dnd-character/dnd_character.py	/^import numpy as np$/;"	namespace	line:1
+modifier	/Users/pip/Exercism/python/dnd-character/dnd_character.py	/^def modifier(value):$/;"	function	line:2
+Character	/Users/pip/Exercism/python/dnd-character/dnd_character.py	/^class Character:$/;"	class	line:6
+__init__	/Users/pip/Exercism/python/dnd-character/dnd_character.py	/^    def __init__(self):$/;"	member	line:7	class:Character
+ability	/Users/pip/Exercism/python/dnd-character/dnd_character.py	/^    def ability(self):$/;"	member	line:16	class:Character
+SgfTree	/Users/pip/Exercism/python/sgf-parsing/sgf_parsing.py	/^class SgfTree(object):$/;"	class	line:1
+__init__	/Users/pip/Exercism/python/sgf-parsing/sgf_parsing.py	/^    def __init__(self, properties=None, children=None):$/;"	member	line:2	class:SgfTree
+__eq__	/Users/pip/Exercism/python/sgf-parsing/sgf_parsing.py	/^    def __eq__(self, other):$/;"	member	line:6	class:SgfTree	file:
+__ne__	/Users/pip/Exercism/python/sgf-parsing/sgf_parsing.py	/^    def __ne__(self, other):$/;"	member	line:24	class:SgfTree	file:
+parse	/Users/pip/Exercism/python/sgf-parsing/sgf_parsing.py	/^def parse(input_string):$/;"	function	line:28
