@@ -1,8 +1,4 @@
-import re, json
-from collections import deque
-from collections import defaultdict
-import collections
-import string
+import re
 
 class SgfTree(object):
     def __init__(self, properties=None, children=None):
@@ -30,7 +26,7 @@ class SgfTree(object):
     def __ne__(self, other):
         return not self == other
 
-#
+#Thanks to Quitz321's solution helped me get past the point I was stuck
 def parse(input_string):
     #cleaning input
     input_string = input_string.replace("\\", "").replace("\t", " ")
@@ -42,6 +38,9 @@ def parse(input_string):
 
     regex_key = r"\;?(?P<keys>[A-Z]+)?"
     regex_val = r"(?:\[(?P<values>(?:.|\s)+?\]?)\])"
+
+    #included finding open and closing Paren incase multiple nested SgfTree
+    #becomes a test case.
     regex_opening = r"(?P<opening>\(?)"
     regex_closing = r"(?P<closing>\)?)"
     regex_tree = r"(?P<Tree>"+regex_opening+regex_key+regex_val+"+"+regex_closing+")"
@@ -49,26 +48,15 @@ def parse(input_string):
 
     properties = {}
     children = []
-    valid_key = ""
     new_node = 0
-    child = 0
     if not re.match(regex_tree, input_string):
         raise ValueError(f'Incorrect Syntax check input string: {input_string}')
 
     for match in matches:
-        if match.group('opening'):
-            old_cild = child
-            child += 1
-        if match.group('closing'):
-            old_child = child
-            child -= 1
         tree = match.group('Tree')
         key = match.group('keys')
-        print(match.span('Tree'))
 
-        #print(child)
         value = []
-        print(tree, key)
         if ';' in tree:
             new_node += 1
         for values in re.finditer(regex_val,tree):
@@ -80,8 +68,3 @@ def parse(input_string):
 
 
     return SgfTree(properties, children)
-
-
-if __name__ == '__main__':
-    sgf_parsing = '(;A[B]D[F](;B[C])())'
-    parse(sgf_parsing)
