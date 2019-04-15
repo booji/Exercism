@@ -1,13 +1,7 @@
-from collections import defaultdict
+from collections import Counter
 import re
 
 
 def word_count(phrase):
-    phrase = phrase.lower().replace("\t", " ").replace("\n", " ")
-    phrase = re.findall(r"((?:[A-Za-z]+\'?[a-z])|(?:[0-9]+))", phrase)
-    count = defaultdict(int)
-
-    for word in phrase:
-        count[word] += 1
-
-    return count
+    return Counter(re.findall(r"((?:[a-z]+\'?[a-z])|"
+                              r"(?:[0-9]+))", phrase.lower()))

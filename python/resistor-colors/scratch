@@ -1,0 +1,71 @@
+MULTIPLIER_COLORS = defaultdict(None, {"silver": 1E-2,
+                                       "gold": 0.1,
+                                       "black": 1,
+                                       "brown": 10,
+                                       "red": 1E2,
+                                       "orange": 1E3,
+                                       "yellow": 1E4,
+                                       "green": 1E5,
+                                       "blue": 1E6,
+                                       "violet": 1E7,
+                                       "grey": 1E8,
+                                       "white": 1E9})
+
+TOLERANCE_COLORS = defaultdict(None, {"silver": 0.1,
+                                       "gold": 0.05,
+                                       "brown": 0.01,
+                                       "red": 0.02,
+                                       "green": 0.005,
+                                       "blue": 0.0025,
+                                       "violet": 0.001,
+                                       "grey": 0.0005})
+
+TEMPERATURE_COEFF = defaultdict(None,{"brown": 100,
+                                      "red": 50,
+                                      "orange": 15,
+                                      "yellow": 25})
+
+
+class Resistor():
+  def __init__(self, colors):
+      colors = [color.lower() for color in colors]
+      if len(colors) == 3:
+          self.digits = int(str(BAND_COLORS.get(colors[0], "E")) +
+                      str(BAND_COLORS.get(colors[1], "E")))
+          self.multiplier = MULTIPLIER_COLORS.get(colors[2],"E")
+          self.tolerance = 0.2
+          self.tempcoeff = ""
+      if len(colors) == 4:
+          self.digits = int(str(BAND_COLORS.get(colors[0], "E")) +
+                      str(BAND_COLORS.get(colors[1], "E")))
+          self.multiplier = MULTIPLIER_COLORS.get(colors[2],"E")
+          self.tolerance = TOLERANCE_COLORS.get(colors[3], 0.2)
+          self.tempcoeff = ""
+      elif len(colors) == 5:
+          self.digits = int(str(BAND_COLORS.get(colors[0], "E")) +
+                      str(BAND_COLORS.get(colors[1], "E")) +
+                      str(BAND_COLORS.get(colors[2], "E")))
+          self.multiplier = MULTIPLIER_COLORS.get(colors[3],"E")
+          self.tolerance = TOLERANCE_COLORS.get(colors[4], 0.2)
+          self.tempcoeff = ""
+      elif len(colors) == 6:
+          self.digits = int(str(BAND_COLORS.get(colors[0], "E")) +
+                      str(BAND_COLORS.get(colors[1], "E")) +
+                      str(BAND_COLORS.get(colors[2], "E")))
+          self.multiplier = MULTIPLIER_COLORS.get(colors[3],"E")
+          self.tolerance = TOLERANCE_COLORS.get(colors[4], 0.2)
+          self.tempcoeff = TEMPERATURE_COEFF.get(colors[5], "E")
+      else:
+          raise ValueError("Must have between 4 and 6 band colours")
+
+  def __str__(self):
+      if self.tempcoeff != "":
+          return f"{self.digits*self.multiplier:.2e}Ω ± {self.tolerance:.2%} with {self.tempcoeff}ppm"
+      return f"{self.digits*self.multiplier:.2e} Ω ± {self.tolerance:.2%}"
+# def actual_resistor(colors):
+#     num_of_bands = len(colors)
+#     if num_of_bands == 4:
+#         pass
+#     elif num_of_bands == 5:
+#         pass
+#     elif num_of_bands == 6:
