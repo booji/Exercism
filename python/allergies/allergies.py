@@ -1,11 +1,20 @@
 class Allergies(object):
+    allergie_list = ['eggs',
+                    'peanuts',
+                    'shellfish',
+                    'strawberries',
+                    'tomatoes',
+                    'chocolate',
+                    'pollen',
+                    'cats']
 
     def __init__(self, score):
-        pass
+        self.allergy=[(score>>i) & 1 for i,x in enumerate(self.allergie_list)]
 
     def is_allergic_to(self, item):
-        pass
+        return item in self.lst
 
     @property
     def lst(self):
-        pass
+        lst = [a for a, t in zip(self.allergie_list,self.allergy) if t]
+        return lst
