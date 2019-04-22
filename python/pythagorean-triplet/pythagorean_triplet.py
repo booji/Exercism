@@ -1,3 +1,12 @@
+def coprime_factors(n):
+    a,b,c,d = 1,1,n,n-1
+    while b > 0:
+        k= (n+a)//c
+        a, b, c, d = c, d, k*c-a, k*d-b
+        if a*b == n:
+            yield a,b
+
+
 def triplets_with_sum(sum_of_triplet):
     lower_c_bound = sum_of_triplet//3
     #upper_a_bound = sum_of_triplet//3
@@ -26,3 +35,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+"""
+a = m^2 - n^2
+b = 2mn
+c = m^2 + n^2
+"""

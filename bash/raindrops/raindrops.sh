@@ -3,25 +3,22 @@ set -o errexit
 set -o nounset
 
 main() {
-    if [[ $# -ne 1 ]] || ! [[ $1 =~ ^[0-9]+$ ]]
-    then
+    if (( $# != 1 )) || [[ $1 = *[!0-9]* ]]; then
         echo "Usage: raindrops.sh <int>"
         exit 1
     fi
-    
-    if ! (($1%3))
-    then x=Pling
+
+    if ! (($1%3)); then
+        x=Pling
     fi
-    if ! (($1%5))
-    then x+=Plang
+    if ! (($1%5)); then
+        x+=Plang
     fi
-    if ! (($1%7))
-    then x+=Plong
+    if ! (($1%7)); then
+        x+=Plong
     fi
 
-
-    echo ${x:-$1}
-    exit 0
+    echo "${x:-$1}"
 }
 
 main "$@"

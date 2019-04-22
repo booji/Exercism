@@ -1,14 +1,14 @@
 def is_paired(input_string):
     symbol = []
-    for chr in input_string:
-        if chr in '([{':
-            symbol.append(chr)
-        elif chr in ')]}':
+    for char in input_string:
+        if char in '([{':
+            symbol.append(char)
+        elif char in ')]}':
             try:
                 last = symbol.pop()
-                if (chr == ')' and last != '(') or \
-                   (chr == ']' and last != '[') or \
-                   (chr == '}' and last != '{'):
+                if (char == ')' and last != '(') or \
+                   (char == ']' and last != '[') or \
+                   (char == '}' and last != '{'):
 
                     return False
             except IndexError:
