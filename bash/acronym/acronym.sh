@@ -14,7 +14,11 @@ main() {
         acronym+="${word:0:1}"
     done
 
-    echo ${acronym} | tr '[a-z]' '[A-Z]'
+    if  ((${BASH_VERSINFO[0]} < 4)); then
+        echo "${acronym}" | tr '[a-z]' '[A-Z]'
+    else
+        echo "${acronym^^}"
+    fi
 
 }
 
